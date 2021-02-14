@@ -12,21 +12,137 @@
   right: 0;
   width: 100%;
   min-height: 100vh;
-  padding: 10rem;
+  padding: 5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: #111;
   color: #fff;
   z-index: 2;
+  transition: 0.5s;
 }
 
-.toggle i {
+.showcase.active {
+  right: 15rem;
+}
+
+.showcase header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 3rem 5rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+}
+
+.showcase video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.7;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #02464d;
+  mix-blend-mode: overlay;
+}
+
+.logo {
+  font-size: 1.5rem;
+  letter-spacing: 0.12ch;
+  cursor: pointer;
+}
+
+.toggle {
   position: relative;
   font-size: 1.8rem;
   cursor: pointer;
 }
 
-video {
+.closeMenu {
   display: none;
+  position: relative;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.text {
+  position: relative;
+  line-height: 1.6;
+  z-index: 3;
+}
+
+.text h2 {
+  font-size: 4rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08ch;
+  line-height: 1;
+}
+
+.text h3 {
+  font-size: 3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08ch;
+  line-height: 1;
+  margin-top: 0.5rem;
+}
+
+.text p {
+  font-size: 1rem;
+  margin: 2rem 0;
+  font-weight: 400;
+  line-height: 1.6;
+  max-width: 70%;
+}
+
+.text a {
+  display: inline-block;
+  background-color: #fff;
+  color: #111;
+  padding: 0.5rem 1.5rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.1ch;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.text a:hover {
+  letter-spacing: 0.18ch;
+  transform: scale(1.05, 1.05);
+}
+
+.social {
+  position: absolute;
+  bottom: 2rem;
+  z-index: 3;
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+  gap: 2rem;
+  font-size: 1.3rem;
+}
+
+.social li i {
+  color: #fff;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.social li i:hover {
+  transform: translateY(-0.6rem);
 }
