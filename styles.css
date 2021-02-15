@@ -1,5 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;400;500;600;700;800;900&display=swap");
 
+:root {
+  --overlay-color: #02464d;
+  --text-color: #fff;
+  --bg-color: #111;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -16,10 +22,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #111;
-  color: #fff;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   z-index: 2;
-  transition: 0.5s;
+  transition: 0.7s;
 }
 
 .showcase.active {
@@ -54,7 +60,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: #02464d;
+  background: var(--overlay-color);
   mix-blend-mode: overlay;
 }
 
@@ -91,27 +97,18 @@
   line-height: 1;
 }
 
-.text h3 {
-  font-size: 3rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08ch;
-  line-height: 1;
-  margin-top: 0.5rem;
-}
-
 .text p {
   font-size: 1rem;
   margin: 2rem 0;
-  font-weight: 400;
+  font-weight: 200;
   line-height: 1.6;
   max-width: 70%;
 }
 
 .text a {
   display: inline-block;
-  background-color: #fff;
-  color: #111;
+  background-color: var(--text-color);
+  color: var(--bg-color);
   padding: 0.5rem 1.5rem;
   text-decoration: none;
   text-transform: uppercase;
@@ -138,11 +135,91 @@
 }
 
 .social li i {
-  color: #fff;
+  color: var(--text-color);
   cursor: pointer;
   transition: 0.2s;
 }
 
 .social li i:hover {
   transform: translateY(-0.6rem);
+}
+
+.menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 15rem;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu ul {
+  position: relative;
+  list-style-type: none;
+  text-align: center;
+}
+
+.menu ul li {
+  margin-bottom: 1rem;
+}
+
+.menu ul li a {
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  text-decoration: none;
+  color: var(--bg-color);
+}
+
+.menu ul li a:hover {
+  color: var(--overlay-color);
+}
+
+@media (max-width: 768px) {
+  .showcase {
+    padding: 1.5rem;
+  }
+
+  .logo,
+  .toggle,
+  .closeMenu {
+    font-size: 1.2rem;
+  }
+
+  .showcase header {
+    padding: 0.5rem 1.5rem;
+  }
+
+  .text {
+    padding: 3rem 0;
+  }
+
+  .text p {
+    max-width: 100%;
+    font-size: 0.8rem;
+  }
+
+  .text h2 {
+    font-size: 2.5rem;
+  }
+
+  .text p {
+    margin: 1.3rem 0;
+  }
+
+  .text a {
+    padding: 0.2rem 1rem;
+    letter-spacing: 0.06ch;
+  }
+
+  .menu ul li {
+    font-size: 0.1rem;
+  }
+
+  .menu ul li a {
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
 }
